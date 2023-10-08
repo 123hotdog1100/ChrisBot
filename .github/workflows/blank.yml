@@ -29,4 +29,5 @@ jobs:
       - name: Install required modules
         run: pip install -r requirements.txt
       - name: Run code
+        env: ${{ secrets.token }}
         run: python3 main.py
