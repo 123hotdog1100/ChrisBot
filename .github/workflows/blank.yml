@@ -33,7 +33,6 @@ jobs:
         
       - name: Setup ENV
         run: |
-          touch: .env
           echo: token=${{ secrets.TOKEN }} >> .env
           echo: ptero=${{ secrets.PTERO }} >> .env
           echo: server=${{ secrets.SERVER }} >> .env
