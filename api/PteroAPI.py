@@ -1,9 +1,9 @@
 from pydactyl import PterodactylClient
-import config
+import os
 
 
-Key = config.ptero
-Server_ID = config.server
+Key = os.getenv('PTERO')
+Server_ID = os.getenv('server')
 
 client = PterodactylClient('https://panel.rpelliott.co.uk/', Key)
 def whitelist(Player):
