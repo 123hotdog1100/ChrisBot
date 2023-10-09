@@ -28,7 +28,13 @@ jobs:
       # Runs a single command using the runners shell
       - name: Install required modules
         run: pip install -r requirements.txt
+      - name: Setup ENV
+        run: |
+          touch: .env
+          echo: token=${{ secrets.TOKEN }} >> .env
+          echo: ptero=${{ secrets.PTERO }} >> .env
+          echo: server=${{ secrets.SERVER }} >> .env
+          cat: .env
+        
       - name: Run code
-        env: 
-          token: ${{ secrets.TOKEN }}
         run: python3 main.py
